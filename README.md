@@ -68,6 +68,17 @@ VRA-Editor is built so none of that gets in the way:
   approve, or reject, each its own folder, freely reassignable in Settings
   to wherever your archive actually lives.
 
+## What's new
+
+- **v1.1.0** — A dedicated app icon, replacing the placeholder company
+  logo. Sync Media now asks whether to use the file with a matching
+  name or browse for a different one, instead of silently guessing;
+  Browse now starts in the record's own folder. Import now surfaces
+  media files that don't match any record, letting you stash them into
+  `done/` or dismiss them instead of leaving them stuck in `ingest`
+  indefinitely.
+- **v1.0.0** — Initial release.
+
 ---
 
 See [`user_manual.pdf`](user_manual.pdf) in this repo for the full user
