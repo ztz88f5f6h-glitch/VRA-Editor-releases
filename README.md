@@ -68,8 +68,52 @@ VRA-Editor is built so none of that gets in the way:
   approve, or reject, each its own folder, freely reassignable in Settings
   to wherever your archive actually lives.
 
+## Web app vs. desktop app
+
+The desktop app above is the full, "professional" tool this project is
+built around. An optional **web companion app** (installed from Settings —
+see What's new below) gives casual, browser-based access for when you just
+need to check or fix a record without the desktop app installed, but it's
+deliberately lighter:
+
+- **Editing view.** Desktop offers both the guided Simple view and the full
+  structure-tree Advanced view, switchable at any time. The web app has the
+  structure tree only, with a **Show XML** toggle alongside it for a raw
+  look at the record.
+- **Media linking (Sync Media)** — reading dimensions/GPS/capture date from
+  a linked image file and writing metadata back into it — is desktop-only.
+  Whether the image lives on the server or on whoever's browsing is
+  genuinely ambiguous over the web, so rather than guess, the web app
+  doesn't offer it at all.
+- **Offline staging.** Only the desktop app can stage a local copy of the
+  Edit folder before you lose connectivity and reconcile it later — the web
+  app needs the server to be reachable.
+- **Undo.** The desktop app keeps an in-session undo stack. The web app has
+  none — every change already lands in the shared Git history, so
+  restoring a past revision from Audits is the equivalent.
+- **Concurrent-edit protection.** The web app holds an advisory lock on a
+  record while it's open, so two people signed in at once can't silently
+  overwrite each other. The desktop app has the same shared-folder risk any
+  file on a network drive does, unprotected.
+- **Signing in.** The web app requires it (an LDAP directory account, a
+  local OS account, or both, depending on how it's set up). The desktop app
+  has none — it relies on whatever access the operating system already
+  grants to the folders themselves.
+
+Everything else — editing, submitting for review, approving/rejecting
+(including reopening a rejected record), Dublin Core/LIDO export, Import,
+and Audits — works the same folder-based way in both.
+
 ## What's new
 
+- **v1.2.1** — The web app can now sign in with a local OS account as
+  well as (or instead of) LDAP. A record a reviewer rejects can be
+  reopened for editing again, in both apps — previously nothing in
+  either app could browse back into the Rejected folder. The web app's
+  Save/Submit/Approve/Reject/Export controls moved into a persistent
+  top bar, gained a **Show XML** view and an About panel, and dropped
+  Media Sync entirely (desktop-only now — see **Web app vs. desktop
+  app** above for what else is deliberately different between the two).
 - **v1.2.0** — A new **web companion app**: review, edit, import, and
   export records from a browser with the same folder-based workflow and
   LDAP sign-in, so work can continue without the desktop app installed.
