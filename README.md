@@ -70,6 +70,12 @@ VRA-Editor is built so none of that gets in the way:
 
 ## What's new
 
+- **v1.2.0** — A new **web companion app**: review, edit, import, and
+  export records from a browser with the same folder-based workflow and
+  LDAP sign-in, so work can continue without the desktop app installed.
+  Set it up with one click from Settings — **Install as Web Server**
+  generates a ready-to-run script that installs it as a real background
+  service (Nginx/Apache on Linux, IIS on Windows).
 - **v1.1.0** — A dedicated app icon, replacing the placeholder company
   logo. Sync Media now asks whether to use the file with a matching
   name or browse for a different one, instead of silently guessing;
